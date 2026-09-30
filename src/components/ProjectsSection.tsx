@@ -15,6 +15,104 @@ interface Project {
 const projects: Project[] = [
   {
     number: '01',
+    title: 'Agent Assist',
+    category: 'AI / CUSTOMER EXPERIENCE',
+    description:
+      'Pioneering AI Agent Assist implementation for True Corporation, Thailand. Transforming customer service operations through intelligent automation, reducing response times, improving first-contact resolution, and enabling seamless agent-AI collaboration. Strategic initiative driving digital experience excellence.',
+    githubUrl: '/jfw-intelligence.html',
+    tech: ['AI/ML', 'Natural Language Processing', 'Agent Orchestration', 'Customer Service', 'Analytics', 'Real-time Processing'],
+    metrics: [
+      { label: 'IMPACT', value: 'Customer Experience' },
+      { label: 'REGION', value: 'Thailand' },
+      { label: 'STATUS', value: 'Live' },
+    ],
+  },
+  {
+    number: '02',
+    title: 'Capacity Improvement Plan',
+    category: 'OPERATIONS / TRANSFORMATION',
+    description:
+      'Strategic initiative to optimize resource allocation and operational capacity across delivery teams. Implemented intelligent capacity forecasting, demand balancing, and automation to maximize team utilization. Delivered significant cost savings while improving service delivery and team satisfaction metrics.',
+    githubUrl: '/jfw-intelligence.html',
+    tech: ['Resource Planning', 'Analytics', 'Automation', 'Process Optimization', 'Forecasting'],
+    metrics: [
+      { label: 'REGION', value: 'Thailand' },
+      { label: 'FOCUS', value: 'Operational Excellence' },
+      { label: 'TYPE', value: 'Strategic Program' },
+    ],
+  },
+  {
+    number: '03',
+    title: 'Customer Experience Lead Initiatives',
+    category: 'LEADERSHIP / TRANSFORMATION',
+    description:
+      'Led AI Agent Assist implementation for True Corporation, Thailand. Managing cross-functional teams driving transformation across digital experience and customer service operations. Spearheading innovation in service delivery and operational excellence.',
+    githubUrl: '/jfw-intelligence.html',
+    tech: ['Leadership', 'AI Implementation', 'Cross-functional Coordination', 'Digital Transformation', 'Team Management'],
+    metrics: [
+      { label: 'ROLE', value: 'Customer Experience Lead' },
+      { label: 'LOCATION', value: 'Bangkok, TCS' },
+      { label: 'PERIOD', value: 'Oct 2024 - Present' },
+    ],
+  },
+  {
+    number: '04',
+    title: 'Travel & Hospitality Transformation',
+    category: 'ACCOUNT MANAGEMENT',
+    description:
+      'Managed $5.6MM travel and hospitality account as Delivery Partner. Spearheaded cloud migration, infrastructure stabilization, and achieved 100% SLA compliance with consistently high customer satisfaction. Drove operational excellence and service reliability.',
+    githubUrl: '/jfw-intelligence.html',
+    tech: ['Cloud Migration', 'Infrastructure', 'SLA Management', 'Account Management', 'Operations'],
+    metrics: [
+      { label: 'ACCOUNT VALUE', value: '$5.6MM' },
+      { label: 'SLA COMPLIANCE', value: '100%' },
+      { label: 'PERIOD', value: 'Mar 2021 - Aug 2022' },
+    ],
+  },
+  {
+    number: '05',
+    title: 'EMEA Financial Services Excellence',
+    category: 'STRATEGIC OPERATIONS',
+    description:
+      'Managed $4.4MM EMEA financial data services engagement as Strategic Delivery Partner. Elevated productivity from 60% to 82% through innovation, automation, and queue management optimization, achieving $22.5K monthly savings and operational efficiency gains.',
+    githubUrl: '/jfw-intelligence.html',
+    tech: ['Automation', 'Process Optimization', 'Queue Management', 'RPA', 'Cost Optimization'],
+    metrics: [
+      { label: 'ACCOUNT VALUE', value: '$4.4MM' },
+      { label: 'PRODUCTIVITY GAIN', value: '60% → 82%' },
+      { label: 'MONTHLY SAVINGS', value: '$22.5K' },
+    ],
+  },
+  {
+    number: '06',
+    title: 'Telecom Vertical Transformation',
+    category: 'TRANSFORMATION LEADERSHIP',
+    description:
+      'Led 150 crore telecom business vertical with transformational impact. Elevated NPS from -44 to +17 within 6 months through customer-centric initiatives. Deployed RPA platform delivering $25.87MM cumulative cost savings and setting new operational excellence standards.',
+    githubUrl: '/jfw-intelligence.html',
+    tech: ['RPA Platform', 'Customer Experience', 'Process Automation', 'NPS Improvement', 'Team Leadership'],
+    metrics: [
+      { label: 'NPS IMPROVEMENT', value: '-44 → +17' },
+      { label: 'RPA SAVINGS', value: '$25.87MM' },
+      { label: 'PERIOD', value: 'May 2014 - Oct 2018' },
+    ],
+  },
+  {
+    number: '07',
+    title: 'Growth Years Excellence',
+    category: 'CAREER DEVELOPMENT',
+    description:
+      'Progressed from Trainer to Service Recovery Head across Bharti Airtel and other organizations. Built and managed high-performance teams while pioneering vendor management strategies. Drove customer service transformation initiatives and operational excellence programs.',
+    githubUrl: '/jfw-intelligence.html',
+    tech: ['Team Building', 'Service Recovery', 'Vendor Management', 'Training', 'Transformation'],
+    metrics: [
+      { label: 'PROGRESSION', value: 'Trainer → Head' },
+      { label: 'FOCUS', value: 'Service Excellence' },
+      { label: 'PERIOD', value: '2001 - 2014' },
+    ],
+  },
+  {
+    number: '09',
     title: 'ResetRefresh60',
     category: 'MOBILE / WELLNESS APP',
     description:
@@ -39,7 +137,7 @@ const projects: Project[] = [
     ],
   },
   {
-    number: '02',
+    number: '10',
     title: 'NeighborDrop POC',
     category: 'COMMUNITY / MOBILE POC',
     description:
