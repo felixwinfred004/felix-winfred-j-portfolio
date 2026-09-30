@@ -19,7 +19,7 @@ const projects: Project[] = [
     category: 'MOBILE / WELLNESS APP',
     description:
       'Privacy-first Flutter wellness application delivering 60-second guided micro-interventions, adaptive Reset Check screening, ambient sounds, heart rate integration via Bluetooth LE, and cloud-synced insights. Features secure local storage, email authentication, Supabase RLS, and optional motion/health data sources.',
-    githubUrl: 'https://github.com/felixwinfred004/resetrefresh60',
+    githubUrl: '/jfw-intelligence.html',
     tech: [
       'Flutter',
       'Dart',
@@ -44,7 +44,7 @@ const projects: Project[] = [
     category: 'COMMUNITY / MOBILE POC',
     description:
       'Community-driven platform proof-of-concept enabling neighbors to share, donate, and exchange items within local neighborhoods. Real-time location services, item categorization, user trust ratings, and seamless item discovery. Designed to foster neighborhood connectivity and resource sharing.',
-    githubUrl: 'https://github.com/felixwinfred004',
+    githubUrl: '/jfw-intelligence.html',
     tech: [
       'Flutter',
       'Dart',

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>JFW Intelligence | Human Intelligence. Amplified by AI.</title>
+  <meta name="description" content="JFW Intelligence builds human-centered AI products, intelligent automation, decision systems, and wellbeing solutions.">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Clash+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #07090c;
+      --panel: #0c1015;
+      --text: #f4f7f9;
+      --muted: #96a0aa;
+      --line: #202832;
+      --cyan: #a78bfa;
+      --violet: #8d82ff;
+      --accent: #a78bfa;
+      --accent-hover: #c4b5fd;
+      --accent-light: #d8c5f5;
+    }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body { font-family: Geist, Arial, sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 0 4px 4px 0; z-index: 1000; }
+    .skip-link:focus { top: 0; }
+
+    nav {
+      height: 82px;
+      padding: 0 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      background: #07090ce8;
+      backdrop-filter: blur(16px);
+      z-index: 10;
+      position: sticky;
+      top: 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 300ms cubic-bezier(.32, .72, 0, 1);
+    }
+    .nav-logo { height: 32px; width: 32px; border-radius: 6px; display: block; flex-shrink: 0; }
+    .footer-logo { height: 28px; width: 28px; border-radius: 4px; display: block; }
+    .mark { font-size: 20px; letter-spacing: -1px; background: linear-gradient(120deg, var(--cyan), var(--violet)); -webkit-background-clip: text; color: transparent; }
+    .links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      color: #c4cbd1;
+      font-size: 13px;
+    }
+    .links a {
+      cursor: pointer;
+      transition: all 300ms cubic-bezier(.32, .72, 0, 1);
+      position: relative;
+    }
+    .links a::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--cyan);
+      transition: width 300ms cubic-bezier(.32, .72, 0, 1);
+    }
+    .links a:hover::after { width: 100%; }
+    .links a.active::after { width: 100%; }
+
+    .page { display: none; min-height: 100vh; padding-bottom: 60px; }
+    .page.active { display: block; animation: fadeIn 400ms cubic-bezier(.32, .72, 0, 1); }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    .hero {
+      min-height: 600px;
+      padding: 80px 8vw 60px;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 10% 20%, rgba(167, 139, 250, 0.03) 0%, transparent 30%);
+    }
+    .eyebrow, .kicker { font-size: 11px; letter-spacing: 2.5px; color: var(--cyan); font-weight: 700; }
+    .hero h1 {
+      font-family: Manrope, sans-serif;
+      font-size: clamp(55px, 7.5vw, 112px);
+      line-height: .94;
+      letter-spacing: -5px;
+      margin: 30px 0;
+      max-width: 1050px;
+    }
+    .hero h1 span { color: #7e8791; }
+    .hero p { font-size: 19px; line-height: 1.7; color: #a7b0b8; max-width: 660px; }
+    .actions { display: flex; gap: 14px; margin-top: 38px; flex-wrap: wrap; }
+
+    .primary, .secondary {
+      padding: 15px 20px;
+      border-radius: 24px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1.5px solid;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 300ms cubic-bezier(.32, .72, 0, 1);
+      position: relative;
+      font-family: Geist, Arial, sans-serif;
+      overflow: hidden;
+    }
+    .primary {
+      background: #0d0d0d;
+      color: #f4f7f9;
+      border-color: #a78bfa;
+      box-shadow: 0 0 0 0 #a78bfa;
+    }
+    .primary::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0turn, #a78bfa, #d8c5f5, #a78bfa);
+      animation: rotate 3s linear infinite;
+      z-index: -1;
+    }
+    .primary:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(167, 139, 250, .5); }
+    .secondary {
+      background: transparent;
+      color: #f4f7f9;
+      border-color: #a78bfa;
+      box-shadow: 0 0 0 0 transparent;
+    }
+    .secondary::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0turn, #a78bfa, #d8c5f5, #06b6d4, #a78bfa);
+      animation: rotate 3s linear infinite;
+      z-index: -1;
+    }
+    .secondary:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(167, 139, 250, .3); }
+
+    @keyframes rotate {
+      100% { transform: rotate(1turn); }
+    }
+
+    .orb { position: absolute; width: 420px; height: 420px; right: -90px; top: 150px; opacity: .6; }
+    .ring { position: absolute; border: 1px solid #5c75a0; border-radius: 50%; inset: 0; animation: spin 12s linear infinite; }
+    .r2 { inset: 55px; border-color: #6671bd; animation-direction: reverse; }
+    .core { position: absolute; inset: 135px; border-radius: 50%; background: radial-gradient(circle, var(--cyan), #4655aa 40%, transparent 70%); filter: blur(10px); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .section { padding: 60px 8vw; }
+    .split { display: grid; grid-template-columns: 1.2fr .8fr; gap: 8vw; align-items: end; margin: 24px 0 40px; }
+    .split h2 { font: 500 clamp(40px, 5vw, 70px)/1.05 Manrope; margin: 0; letter-spacing: -2.5px; }
+    .split p { color: var(--muted); line-height: 1.8; font-size: 16px; }
+
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); margin-top: 30px; }
+    .grid article { padding: 32px 28px 40px 0; border-right: 1px solid var(--line); margin-right: 28px; }
+    .grid article:last-child { border: 0; }
+    .grid b { color: #56616c; font-size: 11px; }
+    .grid h3 { font: 500 20px Manrope; margin: 30px 0 14px; }
+    .grid p { font-size: 13px; line-height: 1.7; color: var(--muted); }
+
+    .dark { background: #0b0e12; }
+    .feature { border: 1px solid var(--line); padding: 40px; display: grid; grid-template-columns: 1fr; gap: 30px; min-height: auto; background: radial-gradient(circle at 80% 50%, #18233c 0, transparent 35%); }
+    .feature h3 { font: 500 58px Manrope; margin: 20px 0; }
+    .feature p { color: var(--muted); max-width: 620px; line-height: 1.8; }
+    .tag { font-size: 10px; letter-spacing: 2px; color: #77828c; }
+
+    .phone {
+      justify-self: center;
+      align-self: center;
+      width: 190px;
+      height: 330px;
+      border: 1px solid #3c4858;
+      border-radius: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #080b10;
+      box-shadow: 0 30px 80px #000;
+    }
+    .phone strong { font: 500 68px Manrope; }
+    .phone small { color: #77828c; }
+    .pulse {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--cyan), #5667cb 45%, transparent 70%);
+      filter: blur(2px);
+      margin-bottom: 18px;
+    }
+
+    .apps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 20px; }
+    .app-card { border: 1px solid var(--line); padding: 24px; border-radius: 8px; background: #091621; transition: all 300ms cubic-bezier(.32, .72, 0, 1); }
+    .app-card:hover { border-color: var(--cyan); box-shadow: 0 8px 20px rgba(105, 232, 241, .1); }
+    .app-card h4 { font: 600 16px Geist; margin: 0 0 10px; color: #dbeaf2; }
+    .app-card p { font-size: 13px; color: var(--muted); margin: 0 0 16px; line-height: 1.6; }
+    .app-link { display: inline-flex; align-items: center; gap: 8px; color: var(--cyan); font-size: 12px; font-weight: 600; cursor: pointer; transition: all 300ms cubic-bezier(.32, .72, 0, 1); }
+    .app-link:hover { transform: translateX(4px); }
+
+    .port-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 30px; }
+    .port-item { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: #091621; transition: all 300ms cubic-bezier(.32, .72, 0, 1); cursor: pointer; }
+    .port-item:hover { border-color: var(--cyan); box-shadow: 0 8px 24px rgba(105, 232, 241, .15); transform: translateY(-4px); }
+    .port-item-img { width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg, #1a2f3f, #0f1f2f); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px; }
+    .port-item-text { padding: 20px; }
+    .port-item h3 { font: 600 16px Manrope; margin: 0 0 8px; color: #dbeaf2; }
+    .port-item p { font-size: 12px; color: var(--muted); margin: 0; }
+
+    .yt-container { border: 1px solid var(--line); border-radius: 8px; padding: 40px; background: #091621; text-align: center; transition: all 300ms cubic-bezier(.32, .72, 0, 1); }
+    .yt-container:hover { border-color: var(--cyan); box-shadow: 0 8px 20px rgba(105, 232, 241, .1); }
+    .yt-icon { font-size: 48px; margin-bottom: 16px; }
+    .yt-text h3 { font: 600 20px Manrope; color: #dbeaf2; margin: 0 0 12px; }
+    .yt-text p { color: var(--muted); font-size: 14px; margin: 0 0 24px; }
+    .yt-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 24px;
+      background: var(--cyan);
+      color: #081010;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 300ms cubic-bezier(.32, .72, 0, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .yt-button::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .2), transparent);
+      transform: translateX(-100%);
+      transition: transform 600ms cubic-bezier(.32, .72, 0, 1);
+    }
+    .yt-button:hover::before { transform: translateX(100%); }
+    .yt-button:hover { background: #5dd6cf; transform: translateY(-2px); }
+
+    .statement { text-align: center; padding: 80px 8vw; background: #0a0d11; }
+    .statement blockquote { font: 500 clamp(34px, 4.5vw, 65px)/1.25 Manrope; margin: 35px auto; max-width: 1100px; letter-spacing: -2px; }
+    .statement blockquote span { color: #747e88; }
+    .statement p { color: var(--muted); }
+
+    .contact { padding: 60px 8vw; display: grid; grid-template-columns: 1fr .7fr; gap: 10vw; align-items: end; }
+    .contact h2 { font: 500 clamp(40px, 5vw, 70px)/1.05 Manrope; margin: 0 0 20px; letter-spacing: -2.5px; }
+    .contact p { color: var(--muted); line-height: 1.8; font-size: 16px; }
+    .contact a {
+      font: 500 clamp(20px, 2vw, 32px) Manrope;
+      color: var(--cyan);
+      border-bottom: 1px solid #355552;
+      padding-bottom: 12px;
+      cursor: pointer;
+      transition: all 300ms cubic-bezier(.32, .72, 0, 1);
+      display: inline-block;
+    }
+    .contact a:hover { color: var(--cyan); border-color: var(--cyan); transform: translateX(4px); }
+
+    .poc-hero { padding: 60px 8vw; background: radial-gradient(circle at 20% 80%, #1a2a3a 0, transparent 40%); }
+    .poc-hero h2 { font: 500 clamp(40px, 5vw, 65px)/1.05 Manrope; margin: 0 0 20px; letter-spacing: -2px; }
+    .poc-hero p { color: var(--muted); max-width: 700px; line-height: 1.8; font-size: 16px; margin: 0 0 30px; }
+    .poc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 24px;
+      border: 1.5px solid var(--cyan);
+      border-radius: 6px;
+      color: var(--cyan);
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 300ms cubic-bezier(.32, .72, 0, 1);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .poc-link::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(105, 232, 241, .2), transparent);
+      transform: translateX(-100%);
+      transition: transform 600ms cubic-bezier(.32, .72, 0, 1);
+    }
+    .poc-link:hover::before { transform: translateX(100%); }
+    .poc-link:hover { background: rgba(105, 232, 241, .1); }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 32px 6vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #66717b;
+      font-size: 11px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    @media(max-width: 850px) {
+      .split, .contact { grid-template-columns: 1fr; gap: 35px; }
+      .grid { grid-template-columns: 1fr 1fr; }
+      .feature { grid-template-columns: 1fr; padding: 32px; }
+      .port-grid { grid-template-columns: repeat(2, 1fr); }
+      .apps { grid-template-columns: 1fr; }
+    }
+    @media(max-width: 520px) {
+      .grid { grid-template-columns: 1fr; }
+      .port-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 4vw; }
+      .links { gap: 16px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#" class="skip-link">Skip to content</a>
+
+  <nav>
+    <a class="brand" onclick="showPage('home')">
+      <img src="./images/nav_logo.png" alt="JFW Intelligence" style="height: 40px; object-fit: contain;">
+    </a>
+    <div class="links">
+      <a onclick="showPage('home')">Home</a>
+      <a onclick="showPage('solutions')">Solutions</a>
+      <a onclick="showPage('work')">Work</a>
+      <a onclick="showPage('products')">Products</a>
+      <a onclick="showPage('portfolio')">Portfolio</a>
+      <a onclick="showPage('youtube')">Channel</a>
+      <a onclick="showPage('contact')">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HOME PAGE -->
+  <div id="home" class="page active">
+    <section class="hero">
+      <div style="margin-bottom: 30px;">
+        <img src="./images/company_logo.png" alt="JFW Intelligence" style="height: 100px; object-fit: contain; border-radius: 8px;">
+      </div>
+      <div class="eyebrow">JFW AI TECH LTD · INTELLIGENT SYSTEMS</div>
+      <h1>Intelligence that<br><span>moves business forward.</span></h1>
+      <p>We build AI-powered products, intelligent systems, operational decision-making platforms, and human-centered wellbeing solutions.</p>
+      <div class="actions">
+        <a class="primary" onclick="showPage('solutions')">Explore our work →</a>
+        <a class="secondary" onclick="showPage('products')">Discover our products</a>
+      </div>
+      <div class="orb">
+        <div class="ring r1"></div>
+        <div class="ring r2"></div>
+        <div class="core"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- SOLUTIONS PAGE -->
+  <div id="solutions" class="page">
+    <section class="section">
+      <div class="kicker">CAPABILITIES</div>
+      <div class="split">
+        <h2>From data to<br>decisive action.</h2>
+        <p>JFW Intelligence combines AI engineering, automation and product thinking to turn complex operational signals into practical decisions and measurable outcomes.</p>
+      </div>
+      <div class="grid">
+        <article><b>01</b><h3>Agentic AI & Automation</h3><p>AI agents and orchestrated workflows that reason, coordinate and execute across business processes.</p></article>
+        <article><b>02</b><h3>Decision Intelligence</h3><p>Real-time signals, predictive models and control towers that surface risk and recommend action.</p></article>
+        <article><b>03</b><h3>Customer Experience AI</h3><p>Intelligence that understands customer signals, anticipates friction and enables proactive experiences.</p></article>
+        <article><b>04</b><h3>Custom AI Products</h3><p>Secure, scalable AI applications designed around real user needs and enterprise constraints.</p></article>
+      </div>
+    </section>
+  </div>
+
+  <!-- WORK PAGE (Featured Work) -->
+  <div id="work" class="page">
+    <section class="section dark">
+      <div class="kicker">FEATURED WORK</div>
+      <div class="poc-hero">
+        <h2>AI-Powered Operations Platform</h2>
+        <p>Real-time operational intelligence for marketplace incident management. AI-driven decision-making system with risk assessment, governance routing (approval/auto/human), and outcome measurement. Proof of concept showcasing intelligent automation at scale.</p>
+        <a href="https://neigbordrop-ai-control-tower.vercel.app/" target="_blank" class="poc-link">View Live Demo →</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- PRODUCTS PAGE -->
+  <div id="products" class="page">
+    <section class="section">
+      <div class="kicker">PRODUCTS</div>
+      <div class="split">
+        <h2>Technology with<br>a human purpose.</h2>
+        <p>Our product portfolio applies intelligence where it can make everyday decisions and experiences meaningfully better.</p>
+      </div>
+      <div class="feature">
+        <div>
+          <span class="tag">FEATURED PRODUCT</span>
+          <h3>ResetRefresh60</h3>
+          <p style="color: var(--muted); margin: 16px 0 40px; font-size: 15px; line-height: 1.6;">A preventive wellbeing platform designed around short, contextual interventions. Health monitoring, 60-second resets, and protective features—built with privacy and user autonomy at the core.</p>
+          <div class="apps" style="margin-top: 0;">
+            <div class="app-card">
+              <h4>📱 iOS</h4>
+              <a href="#" class="app-link">Coming to App Store →</a>
+            </div>
+            <div class="app-card">
+              <h4>🤖 Android</h4>
+              <a href="#" class="app-link">Coming to Google Play →</a>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 40px;">
+          <div style="flex: 1; max-width: 320px; display: flex; flex-direction: column; align-items: center; gap: 24px;">
+            <img src="./images/r65_logo.jpg" alt="ResetRefresh60 Logo" style="width: 160px; height: 160px; object-fit: contain; filter: drop-shadow(0 0 20px rgba(167, 139, 250, 0.3));">
+            <div style="position: relative; width: 100%; aspect-ratio: 9/16; background: #0a1628; border-radius: 40px; padding: 14px; border: 10px solid #1a2a3f; box-shadow: 0 30px 80px rgba(167, 139, 250, 0.25); overflow: hidden;">
+              <img src="./images/app_ui.jpg" alt="ResetRefresh60 App" style="width: 100%; height: 100%; border-radius: 28px; object-fit: cover;">
+            </div>
+          </div>
+          <div style="flex: 1; max-width: 450px;">
+            <h3 style="font-size: 32px; font-weight: 700; margin-bottom: 16px; font-family: Manrope, sans-serif;">ResetRefresh60</h3>
+            <p style="color: #a78bfa; font-size: 16px; line-height: 1.8; margin-bottom: 28px;">A preventive wellbeing platform designed around short, contextual interventions. Health monitoring, 60-second resets, and protective features—built with privacy and user autonomy at the core.</p>
+            <div class="apps">
+              <div class="app-card">
+                <h4>📱 iOS</h4>
+                <a href="#" class="app-link">Coming to App Store →</a>
+              </div>
+              <div class="app-card">
+                <h4>🤖 Android</h4>
+                <a href="#" class="app-link">Coming to Google Play →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- PORTFOLIO PAGE -->
+  <div id="portfolio" class="page">
+    <section class="section">
+      <div class="kicker">PORTFOLIO</div>
+      <h2>Visual work & explorations</h2>
+      <p style="color: var(--muted); margin-bottom: 40px;">A selection of designs, interfaces, and creative exploration.</p>
+      <div class="port-grid">
+        <div class="port-item">
+          <div class="port-item-img">🎨 Design Work</div>
+          <div class="port-item-text">
+            <h3>UI & Product Design</h3>
+            <p>Interface design, design systems, and user experience exploration.</p>
+          </div>
+        </div>
+        <div class="port-item">
+          <div class="port-item-img">📸 Photography</div>
+          <div class="port-item-text">
+            <h3>Visual Storytelling</h3>
+            <p>Photographic work capturing moments and concepts.</p>
+          </div>
+        </div>
+        <div class="port-item">
+          <div class="port-item-img">🎬 Creative</div>
+          <div class="port-item-text">
+            <h3>Creative Exploration</h3>
+            <p>Experimental work exploring visual and interactive ideas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- YOUTUBE PAGE -->
+  <div id="youtube" class="page">
+    <section class="section">
+      <div class="kicker">ENTERTAINMENT & LEARNING</div>
+      <h2>Video Channel</h2>
+      <p style="color: var(--muted); margin-bottom: 40px;">Subscribe for insights, tutorials, and behind-the-scenes work.</p>
+      <div class="yt-container">
+        <div class="yt-icon">▶️</div>
+        <div class="yt-text">
+          <h3>JFW Intelligence Channel</h3>
+          <p>Exploring AI, product thinking, and the intersection of technology and human experience.</p>
+        </div>
+        <a href="https://youtube.com/@mythicalwildwolfwandering" target="_blank" class="yt-button">Subscribe on YouTube →</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- ABOUT PAGE -->
+  <div id="about" class="page">
+    <section class="statement">
+      <div class="kicker">OUR BELIEF</div>
+      <blockquote>AI should not replace human judgment.<br><span>It should make better judgment possible.</span></blockquote>
+      <p>We design intelligence around people, accountability and outcomes.</p>
+    </section>
+  </div>
+
+  <!-- CONTACT PAGE -->
+  <div id="contact" class="page">
+    <section class="contact">
+      <div>
+        <div class="kicker">START A CONVERSATION</div>
+        <h2>Build what comes next.</h2>
+        <p>Whether you're exploring an AI product, modernizing operations, turning an ambitious idea into a working system, or building the future of wellbeing tech, we'd like to hear from you.</p>
+      </div>
+      <a href="mailto:admin@jfw-intelligence.com">admin@jfw-intelligence.com →</a>
+    </section>
+  </div>
+
+  <footer>
+    <div class="brand">
+      <img src="./images/nav_logo.png" alt="JFW Intelligence" style="height: 32px; object-fit: contain;">
+    </div>
+    <div>
+      <p>JFW AI Tech Ltd · © 2026</p>
+      <p>Human Intelligence. Amplified by AI.</p>
+    </div>
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      // Hide all pages
+      document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+      // Show selected page
+      const page = document.getElementById(pageId);
+      if (page) page.classList.add('active');
+      // Update nav active state
+      document.querySelectorAll('.links a').forEach(a => a.classList.remove('active'));
+      event?.target?.classList?.add('active');
+      window.scrollTo(0, 0);
+    }
+  </script>
+</body>
+</html>

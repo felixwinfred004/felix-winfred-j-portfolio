@@ -234,9 +234,8 @@ export const HeroSection: React.FC = () => {
 
               {/* Download Resume Button */}
               <motion.a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/resume.txt"
+                download="Felix-Winfred-Resume.txt"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 whileHover={{ scale: 1.02 }}
@@ -276,13 +275,13 @@ export const HeroSection: React.FC = () => {
 
             {/* 4. Fine Monoline Calligraphy Signature */}
             <div
-              className="text-[2.2rem] text-[#D8AB64] font-normal leading-none -ml-0.5"
+              className="text-[1.6rem] text-[#D8AB64] font-normal leading-none -ml-0.5"
               style={{
                 fontFamily: "'Herr Von Muellerhoff', 'Allura', cursive",
                 letterSpacing: '0.04em',
               }}
             >
-              Felix
+              Felix Winfred John
             </div>
           </motion.div>
         </div>
