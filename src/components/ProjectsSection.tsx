@@ -15,6 +15,20 @@ interface Project {
 const projects: Project[] = [
   {
     number: '01',
+    title: 'Customer Experience Lead Initiatives',
+    category: 'LEADERSHIP / TRANSFORMATION',
+    description:
+      'Led AI Agent Assist implementation for True Corporation, Thailand. Managing cross-functional teams driving transformation across digital experience and customer service operations. Spearheading innovation in service delivery and operational excellence.',
+    githubUrl: '/jfw-intelligence.html',
+    tech: ['Leadership', 'AI Implementation', 'Cross-functional Coordination', 'Digital Transformation', 'Team Management'],
+    metrics: [
+      { label: 'ROLE', value: 'Customer Experience Lead' },
+      { label: 'LOCATION', value: 'Bangkok, TCS' },
+      { label: 'PERIOD', value: 'Oct 2024 - Present' },
+    ],
+  },
+  {
+    number: '02',
     title: 'Agent Assist',
     category: 'AI / CUSTOMER EXPERIENCE',
     description:
@@ -28,7 +42,7 @@ const projects: Project[] = [
     ],
   },
   {
-    number: '02',
+    number: '03',
     title: 'Capacity Improvement Plan',
     category: 'OPERATIONS / TRANSFORMATION',
     description:
@@ -39,20 +53,6 @@ const projects: Project[] = [
       { label: 'REGION', value: 'Thailand' },
       { label: 'FOCUS', value: 'Operational Excellence' },
       { label: 'TYPE', value: 'Strategic Program' },
-    ],
-  },
-  {
-    number: '03',
-    title: 'Customer Experience Lead Initiatives',
-    category: 'LEADERSHIP / TRANSFORMATION',
-    description:
-      'Led AI Agent Assist implementation for True Corporation, Thailand. Managing cross-functional teams driving transformation across digital experience and customer service operations. Spearheading innovation in service delivery and operational excellence.',
-    githubUrl: '/jfw-intelligence.html',
-    tech: ['Leadership', 'AI Implementation', 'Cross-functional Coordination', 'Digital Transformation', 'Team Management'],
-    metrics: [
-      { label: 'ROLE', value: 'Customer Experience Lead' },
-      { label: 'LOCATION', value: 'Bangkok, TCS' },
-      { label: 'PERIOD', value: 'Oct 2024 - Present' },
     ],
   },
   {
@@ -98,7 +98,7 @@ const projects: Project[] = [
     ],
   },
   {
-    number: '09',
+    number: '07',
     title: 'ResetRefresh60',
     category: 'MOBILE / WELLNESS APP',
     description:
@@ -123,7 +123,7 @@ const projects: Project[] = [
     ],
   },
   {
-    number: '10',
+    number: '08',
     title: 'NeighborDrop POC',
     category: 'COMMUNITY / MOBILE POC',
     description:
@@ -301,16 +301,18 @@ export const ProjectsSection: React.FC = () => {
                       ))}
                     </div>
 
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center space-x-3 px-6 py-3.5 border border-[#8C6D4F] bg-[#16120E] hover:border-[#D4AF37] hover:bg-[#D4AF37] text-[#EAD8C7] hover:text-black text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.1)]"
-                      style={{ fontFamily: "'Montserrat', sans-serif" }}
-                    >
-                      <span>EXPLORE PROJECT</span>
-                      <span className="text-xs">↗</span>
-                    </a>
+                    {(project.title === 'ResetRefresh60' || project.title === 'NeighborDrop POC') && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center space-x-3 px-6 py-3.5 border border-[#8C6D4F] bg-[#16120E] hover:border-[#D4AF37] hover:bg-[#D4AF37] text-[#EAD8C7] hover:text-black text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.1)]"
+                        style={{ fontFamily: "'Montserrat', sans-serif" }}
+                      >
+                        <span>EXPLORE PROJECT</span>
+                        <span className="text-xs">↗</span>
+                      </a>
+                    )}
                   </div>
 
                 </div>
