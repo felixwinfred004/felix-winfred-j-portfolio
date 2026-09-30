@@ -276,8 +276,6 @@ export const AboutSection: React.FC = () => {
                   }}
                 />
 
-                {/* Bottom Film Noir Shadow */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
 
                 {/* Monoline Signature */}
                 <div className="absolute bottom-4 right-4 z-20 select-none">
