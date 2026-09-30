@@ -230,7 +230,7 @@ export const ProjectsSection: React.FC = () => {
 
                 {/* Big Background Watermark Number */}
                 <span
-                  className="absolute -bottom-6 -right-3 text-8xl sm:text-9xl font-bold text-[#EAD8C7]/5 select-none pointer-events-none leading-none"
+                  className="absolute -bottom-8 -right-8 text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-[#EAD8C7]/5 select-none pointer-events-none leading-none hidden sm:block"
                   style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                 >
                   {project.number}
@@ -240,7 +240,7 @@ export const ProjectsSection: React.FC = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start relative z-10">
                   
                   {/* Left Column (7 Cols) */}
-                  <div className="lg:col-span-7 flex flex-col justify-between">
+                  <div className="lg:col-span-7 flex flex-col justify-between min-w-0">
                     <div>
                       <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-4">
                         <span className="text-[10px] sm:text-xs font-mono font-bold text-[#D4AF37]">
@@ -259,19 +259,19 @@ export const ProjectsSection: React.FC = () => {
                       </h3>
 
                       <p
-                        className="text-xs sm:text-sm md:text-[14px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide mb-8 max-w-2xl"
-                        style={{ fontFamily: "'Montserrat', sans-serif" }}
+                        className="text-xs sm:text-sm md:text-[14px] font-light text-[#BDB0A4] leading-[1.85] tracking-wide mb-8 break-words overflow-wrap-break-word"
+                        style={{ fontFamily: "'Montserrat', sans-serif", overflowWrap: 'break-word', wordBreak: 'break-word' }}
                       >
                         {project.description}
                       </p>
                     </div>
 
                     {/* Tech Stack Pills */}
-                    <div className="flex flex-wrap gap-2 pt-6 border-t border-[#8C6D4F]/25">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-6 border-t border-[#8C6D4F]/25">
                       {project.tech.map((t) => (
                         <span
                           key={t}
-                          className="px-3 py-1 text-[10px] font-medium tracking-[0.16em] uppercase rounded-sm border border-[#8C6D4F]/40 bg-[#16120E] text-[#E8D7C5] group-hover:border-[#D4AF37]/50 transition-all duration-300"
+                          className="px-2 sm:px-3 py-1 text-[8px] sm:text-[10px] font-medium tracking-[0.16em] uppercase rounded-sm border border-[#8C6D4F]/40 bg-[#16120E] text-[#E8D7C5] group-hover:border-[#D4AF37]/50 transition-all duration-300 break-words"
                           style={{ fontFamily: "'Montserrat', sans-serif" }}
                         >
                           {t}
