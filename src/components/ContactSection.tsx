@@ -6,9 +6,34 @@ export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [sent, setSent] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send email');
+      }
+
+      setSent(true);
+      setFormData({ name: '', email: '', message: '' });
+    } catch (err: any) {
+      setError(err.message || 'Failed to send email. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -151,12 +176,19 @@ export const ContactSection: React.FC = () => {
                   />
                 </div>
 
+                {error && (
+                  <div className="p-3 bg-red-900/30 border border-red-500/50 rounded-sm text-red-300 text-xs text-center">
+                    {error}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full py-3.5 border border-[#8C6D4F]/50 bg-[#14100D] hover:border-[#D4AF37] hover:bg-[#1A1510] text-[#E8DFD8] hover:text-[#F7E7C4] text-xs font-medium tracking-[0.25em] uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
+                  disabled={loading}
+                  className="w-full py-3.5 border border-[#8C6D4F]/50 bg-[#14100D] hover:border-[#D4AF37] hover:bg-[#1A1510] disabled:opacity-50 disabled:cursor-not-allowed text-[#E8DFD8] hover:text-[#F7E7C4] text-xs font-medium tracking-[0.25em] uppercase transition-all duration-300 shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 >
-                  EXECUTE DISPATCH ↗
+                  {loading ? 'SENDING...' : 'EXECUTE DISPATCH ↗'}
                 </button>
 
               </form>
