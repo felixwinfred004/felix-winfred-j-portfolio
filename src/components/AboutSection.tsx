@@ -263,7 +263,7 @@ export const AboutSection: React.FC = () => {
                 {/* Main Portrait */}
                 <img
                   src={aboutImg}
-                  alt="Damisetti Shamya Lohitha"
+                  alt="Felix Winfred John"
                   className="w-full h-full object-cover object-top filter brightness-[0.94] contrast-[1.06] saturate-[1.02] group-hover:brightness-105 group-hover:contrast-[1.12] transition-all duration-700 ease-out"
                 />
 
@@ -281,11 +281,11 @@ export const AboutSection: React.FC = () => {
 
                 {/* Monoline Signature */}
                 <div className="absolute bottom-4 right-4 z-20 select-none">
-                  <span 
+                  <span
                     className="text-3xl text-[#F2D8A7] drop-shadow-[0_0_12px_rgba(242,216,167,0.5)] transition-colors duration-300 group-hover:text-white"
                     style={{ fontFamily: "'Herr Von Muellerhoff', cursive" }}
                   >
-                    Lohitha
+                    Felix
                   </span>
                 </div>
               </div>
