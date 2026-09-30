@@ -217,7 +217,7 @@ export const ProjectsSection: React.FC = () => {
 >
           {projects.map((project) => (
             <ScrollStackItem key={project.title}>
-              <div className="relative w-full rounded-2xl border border-[#8C6D4F]/50 bg-[#0E0C0A] p-8 sm:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#D4AF37]">
+              <div className="relative w-full rounded-2xl border border-[#8C6D4F]/50 bg-[#0E0C0A] p-6 sm:p-8 md:p-12 shadow-[0_25px_70px_rgba(0,0,0,0.98)] group overflow-hidden transition-colors duration-500 hover:border-[#D4AF37]">
                 
                 {/* Top Gold Border Light Flare */}
                 <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37]/80 to-transparent" />
@@ -237,22 +237,22 @@ export const ProjectsSection: React.FC = () => {
                 </span>
 
                 {/* Content Grid */}
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start relative z-10">
                   
                   {/* Left Column (7 Cols) */}
                   <div className="lg:col-span-7 flex flex-col justify-between">
                     <div>
-                      <div className="flex items-center space-x-3 mb-4">
-                        <span className="text-xs font-mono font-bold text-[#D4AF37]">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-4">
+                        <span className="text-[10px] sm:text-xs font-mono font-bold text-[#D4AF37]">
                           {project.number} //
                         </span>
-                        <span className="text-[10.5px] font-mono tracking-[0.25em] uppercase text-[#A8988B]">
+                        <span className="text-[9px] sm:text-[10.5px] font-mono tracking-[0.25em] uppercase text-[#A8988B]">
                           {project.category}
                         </span>
                       </div>
 
                       <h3
-                        className="text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight text-white mb-4 group-hover:text-[#F7E7C4] transition-colors uppercase leading-[0.9]"
+                        className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-normal tracking-tight text-white mb-4 group-hover:text-[#F7E7C4] transition-colors uppercase leading-[0.9]"
                         style={{ fontFamily: "'Bebas Neue', sans-serif" }}
                       >
                         {project.title}
@@ -281,7 +281,7 @@ export const ProjectsSection: React.FC = () => {
                   </div>
 
                   {/* Right Column (5 Cols) */}
-                  <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-6 lg:pl-6 lg:border-l lg:border-[#8C6D4F]/25">
+                  <div className="lg:col-span-5 flex flex-col justify-between h-full space-y-4 sm:space-y-6 pt-4 sm:pt-0 border-t sm:border-t-0 border-[#8C6D4F]/25 lg:pl-6 lg:border-l lg:border-t-0">
                     <div className="space-y-3">
                       <span className="text-[9.5px] font-mono tracking-[0.25em] uppercase text-[#8C6D4F] block mb-2">
                         // ARCHITECTURE METRICS
@@ -289,12 +289,12 @@ export const ProjectsSection: React.FC = () => {
                       {project.metrics.map((m) => (
                         <div
                           key={m.label}
-                          className="p-3.5 rounded-sm border border-[#8C6D4F]/25 bg-[#050403] flex items-center justify-between"
+                          className="p-3 sm:p-3.5 rounded-sm border border-[#8C6D4F]/25 bg-[#050403] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0"
                         >
-                          <span className="text-[10px] font-mono text-[#A8988B]">
+                          <span className="text-[9px] sm:text-[10px] font-mono text-[#A8988B]">
                             {m.label}
                           </span>
-                          <span className="text-[11px] font-mono font-medium text-[#F7E7C4]">
+                          <span className="text-[10px] sm:text-[11px] font-mono font-medium text-[#F7E7C4]">
                             {m.value}
                           </span>
                         </div>
@@ -306,7 +306,7 @@ export const ProjectsSection: React.FC = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center space-x-3 px-6 py-3.5 border border-[#8C6D4F] bg-[#16120E] hover:border-[#D4AF37] hover:bg-[#D4AF37] text-[#EAD8C7] hover:text-black text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.1)]"
+                        className="inline-flex items-center justify-center space-x-2 sm:space-x-3 px-4 sm:px-6 py-2.5 sm:py-3.5 border border-[#8C6D4F] bg-[#16120E] hover:border-[#D4AF37] hover:bg-[#D4AF37] text-[#EAD8C7] hover:text-black text-[10px] sm:text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.1)] w-full sm:w-auto text-center"
                         style={{ fontFamily: "'Montserrat', sans-serif" }}
                       >
                         <span>EXPLORE PROJECT</span>
