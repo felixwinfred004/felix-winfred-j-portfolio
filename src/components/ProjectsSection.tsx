@@ -44,7 +44,7 @@ const projects: Project[] = [
     category: 'COMMUNITY / MOBILE POC',
     description:
       'Community-driven platform proof-of-concept enabling neighbors to share, donate, and exchange items within local neighborhoods. Real-time location services, item categorization, user trust ratings, and seamless item discovery. Designed to foster neighborhood connectivity and resource sharing.',
-    githubUrl: 'https://neighbordrop-ai-control-tower-jfw.vercel.app',
+    githubUrl: 'https://neigbordrop-ai-control-tower-jfw.vercel.app/',
     tech: [
       'Flutter',
       'Dart',
