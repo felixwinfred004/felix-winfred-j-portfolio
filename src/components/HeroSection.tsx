@@ -260,6 +260,11 @@ export const HeroSection: React.FC = () => {
               <p>EXECUTION.</p>
             </div>
 
+            {/* Closing Quote Mark */}
+            <span className="text-xl text-[#C99E5D] leading-none font-serif mb-2">
+              "
+            </span>
+
             {/* 3. Gold Accent Line */}
             <div className="w-28 h-[1px] bg-gradient-to-r from-[#D4AF37] via-[#E8D7C5]/70 to-transparent shadow-[0_0_8px_rgba(212,175,55,0.4)] mb-2" />
 
