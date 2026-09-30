@@ -98,20 +98,6 @@ const projects: Project[] = [
     ],
   },
   {
-    number: '07',
-    title: 'Growth Years Excellence',
-    category: 'CAREER DEVELOPMENT',
-    description:
-      'Progressed from Trainer to Service Recovery Head across Bharti Airtel and other organizations. Built and managed high-performance teams while pioneering vendor management strategies. Drove customer service transformation initiatives and operational excellence programs.',
-    githubUrl: '/jfw-intelligence.html',
-    tech: ['Team Building', 'Service Recovery', 'Vendor Management', 'Training', 'Transformation'],
-    metrics: [
-      { label: 'PROGRESSION', value: 'Trainer → Head' },
-      { label: 'FOCUS', value: 'Service Excellence' },
-      { label: 'PERIOD', value: '2001 - 2014' },
-    ],
-  },
-  {
     number: '09',
     title: 'ResetRefresh60',
     category: 'MOBILE / WELLNESS APP',
