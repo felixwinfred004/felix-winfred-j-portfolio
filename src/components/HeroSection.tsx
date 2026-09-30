@@ -64,18 +64,8 @@ export const HeroSection: React.FC = () => {
         />
       )}
 
-      {/* ================= 2. FIXED VIDEO LAYER ================= */}
+      {/* ================= 2. BACKGROUND GRADIENT LAYER ================= */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-black flex items-center justify-end">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="h-screen w-auto max-w-none object-contain origin-right scale-95 md:scale-[0.98] lg:scale-100"
-        >
-          <source src="/videos/hero.mp4" type="video/mp4" />
-        </video>
-
         {/* Seamless Soft Left Edge Blend */}
         <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-black via-black/85 to-transparent pointer-events-none" />
 

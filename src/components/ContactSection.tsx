@@ -97,7 +97,8 @@ export const ContactSection: React.FC = () => {
                   PACKET DELIVERED
                 </h3>
                 <p className="text-xs text-[#A8988B] font-light" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-                  Transmission registered successfully.
+                  Thank you for reaching out! For faster response, email directly at<br />
+                  <a href="mailto:felix.winfred777@gmail.com" className="text-[#D4AF37] hover:text-[#E8D7C5]">felix.winfred777@gmail.com</a>
                 </p>
               </div>
             ) : (

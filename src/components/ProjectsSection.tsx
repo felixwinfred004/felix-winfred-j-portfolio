@@ -224,7 +224,7 @@ export const ProjectsSection: React.FC = () => {
                       className="inline-flex items-center justify-center space-x-3 px-6 py-3.5 border border-[#8C6D4F] bg-[#16120E] hover:border-[#D4AF37] hover:bg-[#D4AF37] text-[#EAD8C7] hover:text-black text-[11px] font-medium tracking-[0.24em] uppercase transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.1)]"
                       style={{ fontFamily: "'Montserrat', sans-serif" }}
                     >
-                      <span>VIEW ON GITHUB</span>
+                      <span>EXPLORE PROJECT</span>
                       <span className="text-xs">↗</span>
                     </a>
                   </div>
