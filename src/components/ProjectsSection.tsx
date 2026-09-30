@@ -207,12 +207,12 @@ export const ProjectsSection: React.FC = () => {
         {/* React Bits Stacking Deck */}
         {/* React Bits Stacking Deck */}
 <ScrollStack
-  itemDistance={20}
-  itemScale={0.035}
-  itemStackDistance={28}
-  stackPosition="15%"
-  scaleEndPosition="6%"
-  baseScale={0.88}
+  itemDistance={window.innerWidth < 768 ? 40 : 20}
+  itemScale={window.innerWidth < 768 ? 0.01 : 0.035}
+  itemStackDistance={window.innerWidth < 768 ? 12 : 28}
+  stackPosition={window.innerWidth < 768 ? "20%" : "15%"}
+  scaleEndPosition={window.innerWidth < 768 ? "10%" : "6%"}
+  baseScale={window.innerWidth < 768 ? 0.95 : 0.88}
   useWindowScroll={true}
 >
           {projects.map((project) => (
