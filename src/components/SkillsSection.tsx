@@ -4,35 +4,35 @@ import type { Variants } from 'framer-motion';
 
 const bentoCategories = [
   {
-    title: 'FRONTEND ARCHITECTURE',
-    badge: 'CORE PILLAR',
-    items: ['React.js', 'React Native', 'Tailwind CSS', 'Electron.js'],
-    description: 'Specialized in building high-performance client applications, custom component libraries, and immersive desktop/mobile interfaces.',
-    stat: '100% RESPONSIVE',
+    title: 'BUSINESS TRANSFORMATION',
+    badge: 'EXECUTIVE LENS',
+    items: ['Growth Strategy', 'Digitalization', 'Process Reengineering', 'Change Management', 'RPA'],
+    description: 'Architected end-to-end digital transformation programs across Fortune 500 clients. Delivered $58M+ in cumulative cost savings through intelligent automation and operational excellence.',
+    stat: '$58M+ SAVINGS',
     colSpan: 'lg:col-span-7',
   },
   {
-    title: 'DISTRIBUTED BACKEND',
-    badge: 'HIGH CONCURRENCY',
-    items: ['Node.js', 'Express.js', 'Spring Boot', 'Docker', 'Redis'],
-    description: 'Engineered RESTful APIs, JWT role-based access control, caching layers, and multi-tenant SaaS backend isolation.',
-    stat: '< 40ms LATENCY',
+    title: 'OPERATIONS & P&L',
+    badge: 'SCALE & DELIVERY',
+    items: ['P&L Management', 'Service Delivery', 'Quality Management', 'SLA Optimization', 'Cost Control'],
+    description: 'Managed $50M+ P&L portfolios across EMEA, APAC, and India. Led teams of up to 1,600 employees with laser focus on efficiency, customer satisfaction, and profitability.',
+    stat: '$50M+ PORTFOLIO',
     colSpan: 'lg:col-span-5',
   },
   {
-    title: 'DATA PLATFORMS',
-    badge: 'PERSISTENCE',
-    items: ['MongoDB Atlas', 'PostgreSQL', 'MySQL'],
-    description: 'Designing resilient relational and document schemas with optimized indexing and transaction isolation.',
-    stat: 'ACID & NOSQL',
+    title: 'CUSTOMER EXPERIENCE',
+    badge: 'RETENTION',
+    items: ['CX Strategy', 'Stakeholder Engagement', 'AI Integration', 'NPS Improvement', 'Design Thinking'],
+    description: 'Pioneered AI Agent Assist implementations for market leaders. Transformed NPS from -44 to +17 through systematic experience optimization and collaborative innovation.',
+    stat: 'NPS +61',
     colSpan: 'lg:col-span-5',
   },
   {
-    title: 'ALGORITHMS & MACHINE LEARNING',
-    badge: 'INTELLIGENCE',
-    items: ['C++', 'Python', 'Java', 'scikit-learn', 'OpenAI API'],
-    description: '1200+ algorithm problems solved. Applied Random Forest classifiers for real-time risk heatmaps and NLP policy analyzers.',
-    stat: '1200+ SOLVED',
+    title: 'STRATEGIC PARTNERSHIPS',
+    badge: 'RELATIONSHIP MASTERY',
+    items: ['Account Management', 'Sales Strategy', 'Contract Negotiation', 'Vendor Management', 'CXO Engagement'],
+    description: 'Cultivated strategic relationships with C-level executives and global stakeholders. Spearheaded contract renewals, onboarding, and long-term partnership growth across markets.',
+    stat: 'TRUST DRIVEN',
     colSpan: 'lg:col-span-7',
   },
 ];
@@ -87,7 +87,7 @@ export const SkillsSection: React.FC = () => {
             className="text-[11px] font-medium tracking-[0.35em] uppercase text-[#D4AF37]"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
-            03 / TECH MATRIX
+            03 / CORE COMPETENCIES
           </span>
           <div className="w-20 h-[1px] bg-gradient-to-r from-[#D4AF37]/80 via-[#8C6D4F]/40 to-transparent" />
         </motion.div>
@@ -105,10 +105,10 @@ export const SkillsSection: React.FC = () => {
             style={{ fontFamily: "'Bebas Neue', sans-serif" }}
           >
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#FFFFFF] via-[#D5CBC0] to-[#605448] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
-              ARCHITECTURAL MASTERY.
+              ENTERPRISE EXPERTISE.
             </span>
             <span className="block text-transparent bg-clip-text bg-gradient-to-b from-[#F7E7C4] via-[#C99E5D] to-[#543B1A] drop-shadow-[0_8px_25px_rgba(201,158,93,0.35)]">
-              PRECISION APPLIED.
+              PROVEN IMPACT.
             </span>
           </h2>
         </motion.div>
