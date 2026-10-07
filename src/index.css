@@ -1,9 +1,39 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&family=Bebas+Neue&family=Herr+Von+Muellerhoff&display=swap');
 @import "tailwindcss";
+
+:root {
+  /* Professional Dark Luxury Color System */
+  --primary: #0F172A;
+  --primary-fg: #FFFFFF;
+  --secondary: #1E293B;
+  --secondary-fg: #FFFFFF;
+  --accent: #CA8A04;
+  --accent-fg: #0F172A;
+  --background: #020617;
+  --foreground: #F8FAFC;
+  --card: #0E1223;
+  --card-fg: #F8FAFC;
+  --muted: #1A1E2F;
+  --muted-fg: #94A3B8;
+  --border: #334155;
+
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+  --font-script: 'Herr Von Muellerhoff', cursive;
+  --font-display: 'Bebas Neue', sans-serif;
+}
+
 html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: #000;
-}/* deployment trigger */
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+}
+
+html {
+  scroll-behavior: smooth;
+}
