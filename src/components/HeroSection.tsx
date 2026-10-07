@@ -64,12 +64,23 @@ export const HeroSection: React.FC = () => {
         />
       )}
 
-      {/* ================= 2. BACKGROUND GRADIENT LAYER ================= */}
+      {/* ================= 2. PROFESSIONAL VIDEO BACKGROUND ================= */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none"
+      >
+        <source src="https://v15-kling.klingai.com/bs2/upload-ylab-stunt-sgp/6b9c34e9-e606-4773-8e2b-68a106573a73-lNWlslXipm2GcX_pGm7meg-output.mp4?x-kcdn-pid=112372" type="video/mp4" />
+      </video>
+
+      {/* ================= 3. BACKGROUND GRADIENT LAYER ================= */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none bg-black flex items-center justify-end">
         {/* Seamless Soft Left Edge Blend */}
         <div className="absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-black via-black/85 to-transparent pointer-events-none" />
 
-        {/* ================= 3. ANIMATED WATERMARK EMBLEM ================= */}
+        {/* ================= 4. ANIMATED WATERMARK EMBLEM ================= */}
         <div className="absolute bottom-6 right-6 lg:bottom-10 lg:right-12 pointer-events-none flex items-center justify-center z-10">
           <div className="relative flex items-center justify-center">
             <div className="absolute w-36 h-36 bg-black/85 rounded-full blur-xl" />
@@ -96,7 +107,7 @@ export const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      {/* ================= 4. CONTENT LAYER ================= */}
+      {/* ================= 5. CONTENT LAYER ================= */}
       <div className="relative z-10 flex flex-col justify-between h-full w-full px-6 sm:px-12 lg:px-16 pt-6 pb-8 pointer-events-none">
         
         {/* Navigation Bar */}
